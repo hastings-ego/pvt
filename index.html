@@ -616,7 +616,7 @@
                 } else {
                     body.innerHTML = this.cart.map(item => `
                         <div class="flex gap-4 py-4 border-b border-sand/40 last:border-0 animate-fade-in">
-                            <div class="w-20 h-20 rounded-xl flex-shrink-0 img-placeholder" style="background:${item.gradient};">
+                            <div class="w-20 h-20 rounded-xl flex-shrink-0 img-placeholder" style="background-image:url(${item.image}); background-size:contain; background-position:center; background-repeat:no-repeat; ">
                                 <div class="inner-pattern"></div>
                             </div>
                             <div class="flex-1 min-w-0">
@@ -628,7 +628,7 @@
                                         <span class="px-2 text-sm font-medium min-w-[24px] text-center">${item.quantity}</span>
                                         <button onclick="store.updateQuantity(${item.id}, ${item.quantity + 1})" class="qty-btn px-2.5 py-1 text-sm hover:bg-sand transition-colors">+</button>
                                     </div>
-                                    <span class="font-semibold text-sm">$${(item.price * item.quantity).toFixed(2)}</span>
+                                    <span class="font-semibold text-sm">R ${(item.price * item.quantity).toFixed(2)}</span>
                                 </div>
                             </div>
                             <button onclick="store.removeFromCart(${item.id})" class="self-start p-1.5 hover:bg-red-50 rounded-full transition-all group flex-shrink-0" aria-label="Remove item">
@@ -992,7 +992,7 @@
                                         <div class="p-4" style="background-color:2c2b2beb;">
                                             <p class="text-[11px] uppercase tracking-wider text-stone mb-1">${p.category}</p>
                                             <h3 class="font-serif text-sm font-semibold truncate">${p.name}</h3>
-                                            <span class="font-semibold text-sm">$${p.price.toFixed(2)}</span>
+                                            <span class="font-semibold text-sm">R ${p.price.toFixed(2)}</span>
                                         </div>
                                     </div>
                                 `).join('')}
